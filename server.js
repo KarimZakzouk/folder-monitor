@@ -1,5 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 const Folder = 'Folder'
+
+fs.readdir(Folder, (err, files) => {
+    files.forEach(file => {
+        console.log(`${file}`);
+    });
+});
 
 fs.watch(Folder, (event, file) => {
     const date = new Date();
